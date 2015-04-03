@@ -88,6 +88,7 @@ console.log(usermatches + " " + compmatches);
 console.log(person);
 console.log(comp);
 
+$("input").remove('#start');
 $('#usermatches').text(usermatches);
 $('#computermatches').text(compmatches);
 $('#deck').text(deck.length);

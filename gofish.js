@@ -96,6 +96,9 @@ console.log(usermatches + " " + compmatches);
 console.log(person);
 console.log(comp);
 
+var personmove = new Array(0);
+var compmove = new Array(0);
+
 $("input").remove('#start');
 $('#usermatches').text(usermatches);
 $('#computermatches').text(compmatches);
@@ -103,9 +106,6 @@ $('#deck').text(deck.length);
 $('#turn').text("It is your turn. Select a card you would like to ask the computer for.");
 
 var advance = function () {
-
-var personmove = new Array(0);
-var compmove = new Array(0);
 
 if (turn % 2 == 0)
 	{var pick = $('input[name=user]:checked').val();
@@ -147,11 +147,11 @@ if (turn % 2 == 0)
 		{ $('.hand').append($('<input type="radio" name="user" class=' + draw + ' value=' + draw + '/><label class = ' + draw + ' for ' + draw + '>' + title + '</label>'));
 		person.splice(person.length, 0, draw);
 		deck.splice(deck.length - 1, 1);
-		if (personmove.length < 4)
-		{ personmove.push(pick); }
+		if (personmove.length < 6)
+		{ personmove.splice(personmove.length, 1, pick); }
 		else
-		{ personmove.push(pick);
-			personmove.splice(0, 1); } }
+		{ personmove.splice(0, 1);
+		personmove.splice(personmove.length, 1, pick); } }
 		else
 		{ $('#comment').append("You drew a match!");
 		person.splice(can, 1);
@@ -159,6 +159,9 @@ if (turn % 2 == 0)
 		deck.splice(deck.length - 1, 1);} }
 		turn++;
 		console.log("turn:" + turn);
+		console.log("personlist: " + personmove);
+		console.log("complist: " + compmove);
+		
 		
 		console.log("draw: " + draw);
 		
@@ -200,7 +203,7 @@ else
 	{comppick = comp[hannah]; }
 	else
 	{ var attempt = 0;
-		while (compmove.indexOf(comppick) != -1)
+		while (compmove.indexOf(comppick) != -1 && attempt < 3)
 		{ comppick = Math.floor(Math.random() * comp.length);
 			comppick = comp[comppick];
 			attempt += 1; }}
@@ -230,17 +233,25 @@ else
 		if (trash == -1)
 		{ comp.splice(comp.length, 0, compdraw);
 		deck.splice(deck.length - 1, 1); 
-		if (turn > 5)
-		{ compmove.push(comppick);}  }
+		if (compmove.length < 5)
+		{ compmove.splice(compmove.length, 1, comppick); }
+		else 
+		{ compmove.splice(0, 1);
+		compmove.splice(compmove.length, 1, comppick); } }
 		else
 		{ $('#comment').append("The computer drew a match!");
 		comp.splice(trash, 1);
 		compmatches += 1; 
 		deck.splice(deck.length - 1, 1); 
-		if (compmove.indexOf(compdraw) != -1)
-		compmove.splice(compmove.indexOf(compdraw), 1); } }
+		if (compmove.length < 5)
+		{ compmove.splice(compmove.length, 1, comppick); }
+		else 
+		{ compmove.splice(0, 1);
+		compmove.splice(compmove.length, 1, comppick); } } }
 		turn ++;
 		console.log("turn:" + turn);
+		console.log("personlist: " + personmove);
+		console.log("complist: " + compmove);
 		
 		console.log("comp draw: " + compdraw);
 		}

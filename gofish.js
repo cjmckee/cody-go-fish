@@ -6,6 +6,14 @@ var compmatches = 0;
 var title;
 var total;
 
+var search = function (value) {
+var check = false;
+for (var u = 0; u < this.length; u++)
+{ if (this[u] == value)
+	check = true; }
+return check; }
+
+
 var change = function (value) {
 value = Math.floor(value / 4);
 value += 1;
@@ -96,6 +104,9 @@ $('#turn').text("It is your turn. Select a card you would like to ask the comput
 
 var advance = function () {
 
+var personmove = new Array(0);
+var compmove = new Array(0);
+
 if (turn % 2 == 0)
 	{var pick = $('input[name=user]:checked').val();
 	pick = parseInt(pick);
@@ -135,13 +146,19 @@ if (turn % 2 == 0)
 		if (can = -1)
 		{ $('.hand').append($('<input type="radio" name="user" class=' + draw + ' value=' + draw + '/><label class = ' + draw + ' for ' + draw + '>' + title + '</label>'));
 		person.splice(person.length, 0, draw);
-		deck.splice(deck.length - 1, 1);}
+		deck.splice(deck.length - 1, 1);
+		if (personmove.length < 4)
+		{ personmove.push(pick); }
+		else
+		{ personmove.push(pick);
+			personmove.splice(0, 1); } }
 		else
 		{ $('#comment').append("You drew a match!");
 		person.splice(can, 1);
 		usermatches += 1; 
 		deck.splice(deck.length - 1, 1);} }
 		turn++;
+		console.log("turn:" + turn);
 		
 		console.log("draw: " + draw);
 		
@@ -171,6 +188,23 @@ else
 	comppick = parseInt(comppick);
 	ind = parseInt(ind);
 	comppick = comp[comppick];
+	
+	var hannah = -1;
+	for (var q = 0; q < comp.length; q++)
+	{ for (var w = 0; w < personmove.length; w++)
+		{ if (comp[q] == personmove[w])
+			{ hannah = q; }
+		}
+	}
+	if (hannah != -1)
+	{comppick = comp[hannah]; }
+	else
+	{ var attempt = 0;
+		while (compmove.indexOf(comppick) != -1)
+		{ comppick = Math.floor(Math.random() * comp.length);
+			comppick = comp[comppick];
+			attempt += 1; }}
+	
 	console.log(comppick);
 	var compmatch = person.indexOf(comppick);
 	compmatch = parseInt(compmatch);
@@ -194,15 +228,19 @@ else
 		trash = parseInt(trash);
 		console.log("trash: " + trash);
 		if (trash == -1)
-		{ console.log("you shouldn't see this");
-		comp.splice(comp.length, 0, compdraw);
-		deck.splice(deck.length - 1, 1); }  
+		{ comp.splice(comp.length, 0, compdraw);
+		deck.splice(deck.length - 1, 1); 
+		if (turn > 5)
+		{ compmove.push(comppick);}  }
 		else
 		{ $('#comment').append("The computer drew a match!");
 		comp.splice(trash, 1);
 		compmatches += 1; 
-		deck.splice(deck.length - 1, 1);} }
+		deck.splice(deck.length - 1, 1); 
+		if (compmove.indexOf(compdraw) != -1)
+		compmove.splice(compmove.indexOf(compdraw), 1); } }
 		turn ++;
+		console.log("turn:" + turn);
 		
 		console.log("comp draw: " + compdraw);
 		}

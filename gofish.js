@@ -186,11 +186,9 @@ if (turn % 2 == 0)
 	
 	$('#turn').text("It is the computer's turn. Select next turn to advance.");}	
 else
-	{ var comppick = Math.floor(Math.random() * comp.length);
-	var ind = comppick;
-	comppick = parseInt(comppick);
+	{ var ind = Math.floor(Math.random() * comp.length);
 	ind = parseInt(ind);
-	comppick = comp[comppick];
+	comppick = comp[ind];
 	
 	var hannah = -1;
 	for (var q = 0; q < comp.length; q++)
@@ -204,8 +202,8 @@ else
 	else
 	{ var attempt = 0;
 		while (compmove.indexOf(comppick) != -1 && attempt < 3)
-		{ comppick = Math.floor(Math.random() * comp.length);
-			comppick = comp[comppick];
+		{ ind = Math.floor(Math.random() * comp.length);
+			comppick = comp[ind];
 			attempt += 1; }}
 	
 	console.log(comppick);
@@ -270,7 +268,10 @@ else
 		$("input").remove('.' + comppick + '');
 		$("label").remove('.' + comppick + '');
 		person.splice(compmatch, 1);
-		comp.splice(ind, 1);
+		if (hannah != -1)
+		{ comp.splice(hannah, 1); }
+		else
+		{comp.splice(ind, 1); }
 		compmatches += 1;} 
 		
 	$('#turn').text("It is your turn. Select a card you would like to ask the computer for.");	

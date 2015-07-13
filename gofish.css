@@ -52,7 +52,18 @@ margin-top: 20px; }
 	padding: 5px;
 }
 
+img {
+margin: 10px;}
+
 input {padding: 5px;
 margin: 5px 5px 5px 5px;}
 
-img {padding: 10px; }
+input[type="radio"] {
+display: none;}
+	
+label  > input + img{
+	cursor: pointer;
+	border: 2px solid transparent;}
+	
+label > input:checked + img{
+	border: 3px solid #f00;}

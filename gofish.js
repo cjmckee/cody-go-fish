@@ -336,7 +336,7 @@ if (turn % 2 == 0)
 			person.splice(j - 1, 1);
 			usermatches += 1; 
 			h = 0;
-			j = 0;} } }}}
+			j = 0;} } }}
 	else
 	{ $('#comment').text("It's a match! Ask again.");
 		$("input").remove('.' + pick + '');

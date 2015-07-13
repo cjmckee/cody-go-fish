@@ -99,18 +99,64 @@ switch(c) {
 		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Playing_card_spade_A.svg/200px-Playing_card_spade_A.svg.png";
 		break;
 }
-$('.hand').append($('<label class = ' + c + '><input type="radio" name="user" class = ' + c +' value=' + c + ' /><img src = ' + title + ' /></label>')) }
+$('.hand').append($('<label class = ' + c + '><input type="radio" name="user" class = ' + c +' value=' + c + ' /><img src = ' + title + ' /></label>')); }
 
+var help = 0;
 for(var y = 0; y < person.length; y++)
 { for (var a = 0; a < person.length; a++)
 	{ if (person[y] == person[a] && y != a)
-		{ $("input").remove('.' + person[y] + '');
+		{ help = person[y];
+		$("input").remove('.' + person[y] + '');
 			$("label").remove('.' + person[y] + '');
 			person.splice(y, 1);
 			person.splice(a - 1, 1);
 			usermatches += 1; 
 			y = 0;
-			a = 0;} } }
+			a = 0;}
+		if (help != 0 && person[y] == help)
+		{switch(help) {
+	case 13:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Playing_card_spade_K.svg/200px-Playing_card_spade_K.svg.png";
+		break;
+	case 12:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Playing_card_spade_Q.svg/200px-Playing_card_spade_Q.svg.png";
+		break;
+	case 11:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Playing_card_spade_J.svg/200px-Playing_card_spade_J.svg.png";
+		break;
+	case 10:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Playing_card_spade_10.svg/200px-Playing_card_spade_10.svg.png";
+		break;
+	case 9:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Playing_card_spade_9.svg/200px-Playing_card_spade_9.svg.png";
+		break;
+	case 8:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Playing_card_spade_8.svg/200px-Playing_card_spade_8.svg.png";
+		break;
+	case 7:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Playing_card_spade_7.svg/200px-Playing_card_spade_7.svg.png";
+		break;
+	case 6:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Playing_card_spade_6.svg/200px-Playing_card_spade_6.svg.png";
+		break;
+	case 5:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Playing_card_spade_5.svg/200px-Playing_card_spade_5.svg.png";
+		break;
+	case 4:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Playing_card_spade_4.svg/200px-Playing_card_spade_4.svg.png";
+		break;
+	case 3:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Playing_card_spade_3.svg/200px-Playing_card_spade_3.svg.png";
+		break;
+	case 2:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Playing_card_spade_2.svg/200px-Playing_card_spade_2.svg.png";
+		break;
+	case 1:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Playing_card_spade_A.svg/200px-Playing_card_spade_A.svg.png";
+		break;
+}
+$('.hand').append($('<label class = ' + help + '><input type="radio" name="user" class = ' + help +' value=' + help + ' /><img src = ' + title + ' /></label>')); 
+help = 0; }}}
 			
 for(var ya = 0; ya < comp.length; ya++)
 { for (var aa = 0; aa < comp.length; aa++)

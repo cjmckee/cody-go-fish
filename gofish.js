@@ -58,17 +58,48 @@ console.log(comp);
 for (var x = 0; x < 5; x++)
 { console.log(person[x] + " " + comp[x]);
 var c = person[x];
-if (c == 13)
-title = "King";
-else if (c == 12)
-title = "Queen";
-else if (c == 11)
-title = "Jack";
-else if (c == 1)
-title = "Ace";
-else
-title = c;
-$('.hand').append($('<input type="radio" name="user" class=' + c + ' value=' + c + ' /><label class = ' + c + ' for ' + c + '>' + title + '</label>')) }
+switch(c) {
+	case 13:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Playing_card_spade_K.svg/200px-Playing_card_spade_K.svg.png";
+		break;
+	case 12:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Playing_card_spade_Q.svg/200px-Playing_card_spade_Q.svg.png";
+		break;
+	case 11:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Playing_card_spade_J.svg/200px-Playing_card_spade_J.svg.png";
+		break;
+	case 10:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Playing_card_spade_10.svg/200px-Playing_card_spade_10.svg.png";
+		break;
+	case 9:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Playing_card_spade_9.svg/200px-Playing_card_spade_9.svg.png";
+		break;
+	case 8:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Playing_card_spade_8.svg/200px-Playing_card_spade_8.svg.png";
+		break;
+	case 7:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Playing_card_spade_7.svg/200px-Playing_card_spade_7.svg.png";
+		break;
+	case 6:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Playing_card_spade_6.svg/200px-Playing_card_spade_6.svg.png";
+		break;
+	case 5:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Playing_card_spade_5.svg/200px-Playing_card_spade_5.svg.png";
+		break;
+	case 4:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Playing_card_spade_4.svg/200px-Playing_card_spade_4.svg.png";
+		break;
+	case 3:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Playing_card_spade_3.svg/200px-Playing_card_spade_3.svg.png";
+		break;
+	case 2:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Playing_card_spade_2.svg/200px-Playing_card_spade_2.svg.png";
+		break;
+	case 1:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Playing_card_spade_A.svg/200px-Playing_card_spade_A.svg.png";
+		break;
+}
+$('.hand').append($('<label class = ' + c + '><input type="radio" name="user" class = ' + c +' value=' + c + ' /><img src = ' + title + ' /></label>')) }
 
 for(var y = 0; y < person.length; y++)
 { for (var a = 0; a < person.length; a++)
@@ -133,18 +164,49 @@ if (turn % 2 == 0)
 		var can = person.indexOf(draw);
 		can = parseInt(can);
 		console.log("can: " + can);
-		if (draw == 13)
-		title = "King";
-		else if (draw == 12)
-		title = "Queen";
-		else if (draw == 11)
-		title = "Jack";
-		else if (draw == 1)
-		title = "Ace";
-		else
-		title = draw;
+		switch(draw) {
+	case 13:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Playing_card_spade_K.svg/200px-Playing_card_spade_K.svg.png";
+		break;
+	case 12:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Playing_card_spade_Q.svg/200px-Playing_card_spade_Q.svg.png";
+		break;
+	case 11:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Playing_card_spade_J.svg/200px-Playing_card_spade_J.svg.png";
+		break;
+	case 10:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Playing_card_spade_10.svg/200px-Playing_card_spade_10.svg.png";
+		break;
+	case 9:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Playing_card_spade_9.svg/200px-Playing_card_spade_9.svg.png";
+		break;
+	case 8:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Playing_card_spade_8.svg/200px-Playing_card_spade_8.svg.png";
+		break;
+	case 7:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Playing_card_spade_7.svg/200px-Playing_card_spade_7.svg.png";
+		break;
+	case 6:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Playing_card_spade_6.svg/200px-Playing_card_spade_6.svg.png";
+		break;
+	case 5:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Playing_card_spade_5.svg/200px-Playing_card_spade_5.svg.png";
+		break;
+	case 4:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Playing_card_spade_4.svg/200px-Playing_card_spade_4.svg.png";
+		break;
+	case 3:
+		title= "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Playing_card_spade_3.svg/200px-Playing_card_spade_3.svg.png";
+		break;
+	case 2:
+		title= "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Playing_card_spade_2.svg/200px-Playing_card_spade_2.svg.png";
+		break;
+	case 1:
+		title= "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Playing_card_spade_A.svg/200px-Playing_card_spade_A.svg.png";
+		break;
+}
 		if (can = -1)
-		{ $('.hand').append($('<input type="radio" name="user" class=' + draw + ' value=' + draw + '/><label class = ' + draw + ' for ' + draw + '>' + title + '</label>'));
+		{ $('.hand').append($('<label class = ' + draw + '><input type="radio" name="user" class = ' + draw +' value=' + draw + ' /><img src = ' + title + ' /></label>'));
 		person.splice(person.length, 0, draw);
 		deck.splice(deck.length - 1, 1);
 		if (personmove.length < 6)
@@ -298,17 +360,48 @@ else
 	if (person.length == 0 && deck.length != 0)
 	{ var t = deck[deck.length - 1];
 	t = parseInt(t);
-	if (t == 13)
-	title = "King";
-	else if (t == 12)
-	title = "Queen";
-	else if (t == 11)
-	title = "Jack";
-	else if (t == 1)
-	title = "Ace";
-	else
-	title = t;
-	$('.hand').append($('<input type="radio" name="user" class=' + t + ' value=' + t + ' /><label class = ' + t + ' for ' + t + '>' + title + '</label>'));
+	switch(t) {
+	case 13:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Playing_card_spade_K.svg/200px-Playing_card_spade_K.svg.png";
+		break;
+	case 12:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Playing_card_spade_Q.svg/200px-Playing_card_spade_Q.svg.png";
+		break;
+	case 11:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Playing_card_spade_J.svg/200px-Playing_card_spade_J.svg.png";
+		break;
+	case 10:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Playing_card_spade_10.svg/200px-Playing_card_spade_10.svg.png";
+		break;
+	case 9:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Playing_card_spade_9.svg/200px-Playing_card_spade_9.svg.png";
+		break;
+	case 8:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Playing_card_spade_8.svg/200px-Playing_card_spade_8.svg.png";
+		break;
+	case 7:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Playing_card_spade_7.svg/200px-Playing_card_spade_7.svg.png";
+		break;
+	case 6:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Playing_card_spade_6.svg/200px-Playing_card_spade_6.svg.png";
+		break;
+	case 5:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Playing_card_spade_5.svg/200px-Playing_card_spade_5.svg.png";
+		break;
+	case 4:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Playing_card_spade_4.svg/200px-Playing_card_spade_4.svg.png";
+		break;
+	case 3:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Playing_card_spade_3.svg/200px-Playing_card_spade_3.svg.png";
+		break;
+	case 2:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Playing_card_spade_2.svg/200px-Playing_card_spade_2.svg.png";
+		break;
+	case 1:
+		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Playing_card_spade_A.svg/200px-Playing_card_spade_A.svg.png";
+		break;
+}
+$('.hand').append($('<label class = ' + t + '><input type="radio" name="user" class = ' + t +' value=' + t + ' /><img src = ' + title + ' /></label>'));
 	person.splice(0, 0, t);
 	deck.splice(deck.length - 1, 1); }
 	
@@ -320,6 +413,8 @@ $('#deck').text(deck.length);
 
 total = usermatches + compmatches;
 console.log("total: " + total);
+
+$("input[type='radio']").prop("checked", false);
 
 if (total == 26)
 { if (usermatches > compmatches)

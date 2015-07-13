@@ -343,9 +343,9 @@ if (turn % 2 == 0)
 		$("label").remove('.' + pick + '');
 		person.splice(mine, 1);
 		comp.splice(match, 1);
-		usermatches += 1;} 
+		usermatches += 1;}}
 	
-	$('#turn').text("It is the computer's turn. Select next turn to advance.");}}	
+	$('#turn').text("It is the computer's turn. Select next turn to advance.");}	
 else
 	{ var ind = Math.floor(Math.random() * comp.length);
 	ind = parseInt(ind);

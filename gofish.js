@@ -239,6 +239,10 @@ if (turn % 2 == 0)
 	var match = comp.indexOf(pick);
 	console.log("match " + match);
 	
+	if (pick == NaN)
+	{$('#comment').text("You forgot to pick a card. Please try again!");
+	turn--; }
+	else {
 	if (match == -1)
 	{ 	if (pick == 13)
 		title = "King";
@@ -296,8 +300,8 @@ if (turn % 2 == 0)
 		break;
 	case 1:
 		title= "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Playing_card_spade_A.svg/200px-Playing_card_spade_A.svg.png";
-		break;
-}
+		break;}
+		
 		if (can = -1)
 		{ $('.hand').append($('<label class = ' + draw + '><input type="radio" name="user" class = ' + draw +' value=' + draw + ' /><img src = ' + title + ' /></label>'));
 		person.splice(person.length, 0, draw);
@@ -312,6 +316,7 @@ if (turn % 2 == 0)
 		person.splice(can, 1);
 		usermatches += 1; 
 		deck.splice(deck.length - 1, 1);} }
+		
 		turn++;
 		console.log("turn:" + turn);
 		console.log("personlist: " + personmove);
@@ -330,7 +335,7 @@ if (turn % 2 == 0)
 			person.splice(j - 1, 1);
 			usermatches += 1; 
 			h = 0;
-			j = 0;} } }}
+			j = 0;} } }}}
 	else
 	{ $('#comment').text("It's a match! Ask again.");
 		$("input").remove('.' + pick + '');

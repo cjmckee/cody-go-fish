@@ -240,9 +240,10 @@ if (turn % 2 == 0)
 	console.log("match " + match);
 	
 	if (pick == NaN)
-	{$('#comment').text("You forgot to pick a card. Please try again!");
-	turn--; }
-	else {
+		{$('#comment').text("You forgot to pick a card. Please try again!");
+		turn--; }
+	else 
+	{
 	if (match == -1)
 	{ 	if (pick == 13)
 		title = "King";

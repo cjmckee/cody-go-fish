@@ -159,52 +159,7 @@ for (var ron = 0; ron < person.length; ron++)
 }
 $('.hand').append($('<label class = ' + help + '><input type="radio" name="user" class = ' + help +' value=' + help + ' /><img src = ' + title + ' /></label>')); }}
 
-if (usermatches == 2)
-{var safe = person[0];
-switch(safe) {
-	case 13:
-		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Playing_card_spade_K.svg/200px-Playing_card_spade_K.svg.png";
-		break;
-	case 12:
-		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Playing_card_spade_Q.svg/200px-Playing_card_spade_Q.svg.png";
-		break;
-	case 11:
-		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Playing_card_spade_J.svg/200px-Playing_card_spade_J.svg.png";
-		break;
-	case 10:
-		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Playing_card_spade_10.svg/200px-Playing_card_spade_10.svg.png";
-		break;
-	case 9:
-		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Playing_card_spade_9.svg/200px-Playing_card_spade_9.svg.png";
-		break;
-	case 8:
-		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Playing_card_spade_8.svg/200px-Playing_card_spade_8.svg.png";
-		break;
-	case 7:
-		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Playing_card_spade_7.svg/200px-Playing_card_spade_7.svg.png";
-		break;
-	case 6:
-		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Playing_card_spade_6.svg/200px-Playing_card_spade_6.svg.png";
-		break;
-	case 5:
-		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Playing_card_spade_5.svg/200px-Playing_card_spade_5.svg.png";
-		break;
-	case 4:
-		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Playing_card_spade_4.svg/200px-Playing_card_spade_4.svg.png";
-		break;
-	case 3:
-		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Playing_card_spade_3.svg/200px-Playing_card_spade_3.svg.png";
-		break;
-	case 2:
-		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Playing_card_spade_2.svg/200px-Playing_card_spade_2.svg.png";
-		break;
-	case 1:
-		title = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Playing_card_spade_A.svg/200px-Playing_card_spade_A.svg.png";
-		break;
-}
-$('.hand').append($('<label class = ' + safe + '><input type="radio" name="user" class = ' + safe +' value=' + safe + ' /><img src = ' + title + ' /></label>')); }
 
-			
 for(var ya = 0; ya < comp.length; ya++)
 { for (var aa = 0; aa < comp.length; aa++)
 	{ if(comp[ya] == comp[aa] && ya != aa)

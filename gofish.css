@@ -56,6 +56,9 @@ margin-top: 20px; }
 	padding: 5px;
 }
 
+input {padding: 5px;
+margin: 5px 5px 5px 5px;}
+
 img {
 margin: 10px;}
 

@@ -240,8 +240,7 @@ if (turn % 2 == 0)
 	console.log("match " + match);
 	
 	if(isNaN(pick))
-	{ $('#comment').text("You didn't select a card. Try again!");
-	turn--;}
+	{ $('#comment').text("You didn't select a card. Try again!");}
 	else{
 	if (match == -1)
 	{ 	if (pick == 13)

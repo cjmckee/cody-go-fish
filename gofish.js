@@ -239,7 +239,7 @@ if (turn % 2 == 0)
 	var match = comp.indexOf(pick);
 	console.log("match " + match);
 	
-	if(pick == NaN)
+	if(isNan(pick))
 	{ $('#comment').text("You didn't select a card. Try again!");
 	turn--;}
 	else{

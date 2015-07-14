@@ -22,6 +22,9 @@ value = 13;
 return value;}
 
 var start = function () {
+	
+var difficulty = $('input[name=difficulty]:checked').val();
+difficulty = parseInt(difficulty);
 
 var turn = 0;
 
@@ -179,6 +182,8 @@ var personmove = new Array(0);
 var compmove = new Array(0);
 
 $("input").remove('#start');
+$("input").remove('.diff');
+$("div").remove('.difficulty');
 $('#usermatches').text(usermatches);
 $('#computermatches').text(compmatches);
 $('#deck').text(deck.length);
@@ -304,6 +309,7 @@ else
 	ind = parseInt(ind);
 	comppick = comp[ind];
 	
+	if (difficulty == 1) {
 	var hannah = -1;
 	for (var q = 0; q < comp.length; q++)
 	{ for (var w = 0; w < personmove.length; w++)
@@ -318,7 +324,7 @@ else
 		while (compmove.indexOf(comppick) != -1 && attempt < 3)
 		{ ind = Math.floor(Math.random() * comp.length);
 			comppick = comp[ind];
-			attempt += 1; }}
+	attempt += 1; }}}
 	
 	console.log(comppick);
 	var compmatch = person.indexOf(comppick);

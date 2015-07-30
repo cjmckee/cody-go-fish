@@ -1,54 +1,67 @@
 <!DOCTYPE html>
-
-<head>
-	<title>Cody's Go Fish Game</title>
-	
+<html>
+	<head>
+		<title>Cody's Go Fish Game</title>
+		
 		<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="gofish.css" />
+		<link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="gofish1.css">
 		<script type="text/javascript" src="gofish.js"></script>
 	</head>
-	
 	<body>
+	<div class="top">
+		<div class="nav">
+			<div class="container">
+				<ul class="pull-left">
+					<li><a href="">Go Fish</a></li>
+					<li><a href="">About Cody</a></li>
+				</ul>
+				<ul class="pull-right">
+					<li><a href="">Other Projects</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="jumbotron">
+			<div class="container">
+				<h1>Cody's Go Fish Game</h1>
+				<p>Select a difficulty and then select the Start button!</p>
+				
+				<div class = "diff">
+				<input type = "radio" name = "difficulty" value = 0 checked />Easy
+				<input type = "radio" name = "difficulty" value = 1 />Hard
+				</div>
+				
+				<input class ="buttons" type ="button" id="start" value="Start!" />
+			</div>
+		</div>
+		</div>
+		
+		<div class="bottom">
+		<div class="fish">
+			<div class="container">
+				<p id="turn">This will let you know whose turn it is.</p>
+				
+				<p class="hand">Here is your hand.<br /></p>
+				
+				<input class ="buttons" type = "button" id = "gofish" value = "Next turn" />
+				
+				<p id="comment">This will tell you what happens!</p>
+				
+				<p class= "matches">Your matches: <span id="usermatches"></span></p>
 	
-	<h1 style = "text-align: center">The Javascript Go Fish Game!</h1>
+				<p class = "matches">Computer's matches: <span id = "computermatches"></span></p>
 	
-	<div class="starting">
-	
-	<p style = "font-size: 20px" class="boss">Select a difficulty and then click the start button to begin the game! After that, click the "Next Turn" button to advance.</p>
-	
-	<div style="text-align: center"><img src="http://tenterdengc.co.uk/wp-content/uploads/2013/04/goldfish_1212487c.jpg" alt="goldfish" height = "288px" width = "460px" /></div>
-	
-	<div class = "difficulty" style="text-align: center">
-		<input class = "diff" type = "radio" name = "difficulty" value = 0 /><span style="font-size: 20px">Easy</span>
-		<input class = "diff" type = "radio" name = "difficulty" value = 1 checked /><span style="font-size: 20px">Normal</span>
-	</div>
-	
-	<input class ="buttons" type ="button" id="start" value="Start!" />
-	
-	</div>
-	
-	<div class = "fish">
-	
-	<p class="boss">This is the actual game. Your hand will appear below. Select a card to ask the computer if they have that card. If not, you will draw. Select next turn to advance turns.</p>
-	
-	<p id = "turn">This will tell whose turn it is.</p>
-	
-	<p class = "hand">Here is your hand.<br /></p>
-	
-	<input class ="buttons" type = "button" id = "gofish" value = "Next turn" />
-	
-	<p class="boss" id="comment">This will tell you what happens!</p>
-	
-	<p class= "matches">Your matches: <span id="usermatches"></span></p>
-	
-	<p class = "matches">Computer's matches: <span id = "computermatches"></span></p>
-	
-	<p class ="boss">Cards left in deck: <span id="deck"></span></p>
-	</div>
-	
-<h2 style="text-align: center">Created by Cody McKee</h2>
-<h4 style="text-align: center">Images from Wikipedia</h4>
-	
-</body>
-
+				<p>Cards left in deck: <span id="deck"></span></p>
+			</div>
+		</div>
+		
+		<div class="footer">
+			<div class="container">
+				<h3>Created by Cody McKee</h3>
+				<h4>Images from Wikipedia</h4>
+			</div>
+		</div>
+		</div>
+	</body>
 </html>

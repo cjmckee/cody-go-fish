@@ -181,6 +181,8 @@ console.log(comp);
 var personmove = new Array(0);
 var compmove = new Array(0);
 
+$('.top').remove();
+
 $("input").remove('#start');
 $("input").remove('.diff');
 $("div").remove('.difficulty');

@@ -263,7 +263,7 @@ if (turn % 2 == 0)
 		title= "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Playing_card_spade_A.svg/200px-Playing_card_spade_A.svg.png";
 		break;}
 		
-		if (can = -1)
+		if (can === -1)
 		{ $('.hand').append($('<label class = ' + draw + '><input type="radio" name="user" class = ' + draw +' value=' + draw + ' /><img src = ' + title + ' /></label>'));
 		person.splice(person.length, 0, draw);
 		deck.splice(deck.length - 1, 1);
@@ -272,9 +272,13 @@ if (turn % 2 == 0)
 		else
 		{ personmove.splice(0, 1);
 		personmove.splice(personmove.length, 1, pick); } }
+		
 		else
 		{ $('#comment').append("You drew a match!");
 		person.splice(can, 1);
+		$("input").remove('.' + draw + '');
+		$("label").remove('.' + draw + '');
+		
 		usermatches += 1; 
 		deck.splice(deck.length - 1, 1);} }
 		
@@ -284,19 +288,7 @@ if (turn % 2 == 0)
 		console.log("complist: " + compmove);
 		
 		
-		console.log("draw: " + draw);
-		
-		for(var h = 0; h < person.length; h++)
-		{ for (var j = 0; j < person.length; j++)
-		{ if (person[h] == person[j] && h != j)
-		{ $('#comment').append("You got a match from your draw!");
-		$("input").remove('.' + person[h] + '');
-			$("label").remove('.' + person[h] + '');
-			person.splice(h, 1);
-			person.splice(j - 1, 1);
-			usermatches += 1; 
-			h = 0;
-			j = 0;} } }}
+		console.log("draw: " + draw); }
 	else
 	{ $('#comment').text("It's a match! Ask again.");
 		$("input").remove('.' + pick + '');
@@ -321,12 +313,12 @@ else
 	}
 	if (hannah != -1)
 	{comppick = comp[hannah]; }
-	else
-	{ var attempt = 0;
+	
+	var attempt = 0;
 		while (compmove.indexOf(comppick) != -1 && attempt < 3)
 		{ ind = Math.floor(Math.random() * comp.length);
 			comppick = comp[ind];
-	attempt += 1; }}}
+	attempt += 1; }}
 	
 	console.log(comppick);
 	var compmatch = person.indexOf(comppick);
@@ -350,6 +342,7 @@ else
 		var trash = comp.indexOf(compdraw);
 		trash = parseInt(trash);
 		console.log("trash: " + trash);
+		
 		if (trash == -1)
 		{ comp.splice(comp.length, 0, compdraw);
 		deck.splice(deck.length - 1, 1); 
@@ -358,6 +351,7 @@ else
 		else 
 		{ compmove.splice(0, 1);
 		compmove.splice(compmove.length, 1, comppick); } }
+		
 		else
 		{ $('#comment').append("The computer drew a match!");
 		comp.splice(trash, 1);
@@ -368,6 +362,7 @@ else
 		else 
 		{ compmove.splice(0, 1);
 		compmove.splice(compmove.length, 1, comppick); } } }
+		
 		turn ++;
 		console.log("turn:" + turn);
 		console.log("personlist: " + personmove);

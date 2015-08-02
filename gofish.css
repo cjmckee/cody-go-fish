@@ -98,3 +98,10 @@ label  > input + img{
 	
 label > input:checked + img{
 	border: 3px solid #f00;}
+	
+.secret {
+	display: none;
+	font-size: 108px;
+	text-align: center;
+	font-weight: bold;
+}

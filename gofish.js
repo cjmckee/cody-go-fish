@@ -6,6 +6,20 @@ var compmatches = 0;
 var title;
 var total;
 
+$(function(){
+	var userkeys = [];
+	var konami = "38,38,40,40,37,39,37,39,66,65";
+	$(document).keydown(function(event) {
+		userkeys.push(event.keyCode);
+		if (userkeys.toString().indexOf(konami) > -1)
+		{ $('.top').remove();
+		$('.bottom').remove();
+		$('.secret').show(); }
+		else if (userkeys.length > 100)
+		{ userkeys = userkeys.slice(89); }
+	});
+});
+
 var search = function (value) {
 var check = false;
 for (var u = 0; u < this.length; u++)

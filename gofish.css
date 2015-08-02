@@ -102,6 +102,9 @@ label > input:checked + img{
 .secret {
 	display: none;
 	font-size: 108px;
-	text-align: center;
 	font-weight: bold;
+	height: 120px;
+	width: 600px;
+	margin-left: 200px;
+	margin-top: 100px;
 }

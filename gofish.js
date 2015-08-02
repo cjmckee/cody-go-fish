@@ -14,7 +14,22 @@ $(function(){
 		if (userkeys.toString().indexOf(konami) > -1)
 		{ $('.top').remove();
 		$('.bottom').remove();
-		$('.secret').show(); }
+		$('.secret').show(); 
+			
+		var animation = function() {
+			$('.secret').animate({
+			left: 400,
+		top: 200 }, 1000)
+		$('.secret').animate({
+			left: 0 }, 1000)
+		$('.secret').animate({
+			left: 400,
+		top: 0}, 1000)
+		$('.secret').animate({
+		left: 0 }, 1000, animation); }
+		
+		animation();}
+		
 		else if (userkeys.length > 100)
 		{ userkeys = userkeys.slice(89); }
 	});

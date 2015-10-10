@@ -52,8 +52,7 @@ return value;}
 
 var start = function () {
 	
-var difficulty = $('input[name=difficulty]:checked').val();
-difficulty = parseInt(difficulty);
+var difficulty = 1;
 
 var turn = 0;
 

@@ -397,6 +397,8 @@ else
 		console.log("complist: " + compmove);
 		
 		console.log("comp draw: " + compdraw);
+		
+		$('#turn').text("It is your turn. Select a card you would like to ask the computer for.");
 		}
 	else
 	{ if (comppick == 13)
@@ -418,8 +420,6 @@ else
 		else
 		{comp.splice(ind, 1); }
 		compmatches += 1;} 
-		
-	$('#turn').text("It is your turn. Select a card you would like to ask the computer for.");	
 	}
 	
 	console.log("person: " + person);

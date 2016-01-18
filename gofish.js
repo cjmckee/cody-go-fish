@@ -381,7 +381,7 @@ else
 		compmove.splice(compmove.length, 1, comppick); } }
 		
 		else
-		{ $('#comment').append("The computer drew a match!");
+		{ $('#comment').append(" The computer drew a match!");
 		comp.splice(trash, 1);
 		compmatches += 1; 
 		deck.splice(deck.length - 1, 1); 
